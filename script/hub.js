@@ -1,4 +1,4 @@
-// show all categories data.
+// show categories data.
 const handleCategory = async () => {
   const res = await fetch(
     "https://openapi.programming-hero.com/api/videos/categories"
@@ -10,12 +10,13 @@ const handleCategory = async () => {
   data.data.forEach((category) => {
     const div = document.createElement("div");
     div.innerHTML = `
-        <button onclick="handleAllCategories(${category.category_id})" class="btn btn-active btn-ghost">${category.category}</button>
+        <button onclick="handleAllCategories('${category.category_id}')" class="btn btn-ghost btn-active">${category.category}</button>
         `;
     categoryContainer.appendChild(div);
   });
 };
 
+// all categories data api
 const handleAllCategories = (id) => {
   fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`)
     .then((res) => res.json())
@@ -29,10 +30,10 @@ const displayAllCategories = (data) => {
   error.innerHTML = "";
   if (data.length > 0) {
     data.forEach((item) => {
-        const timeALl = item.others.posted_date;
-        console.log(timeALl);
+      const timeALl = item.others.posted_date;
+      // console.log(timeALl);
       const hours = Math.floor(timeALl / 3600);
-      const minutes = Math.floor((timeALl -(hours * 3600)) / 60);
+      const minutes = Math.floor((timeALl - (hours * 3600)) / 60);
       const div = document.createElement("div");
       div.innerHTML = `
             <div class="card card-compact bg-base-100 shadow-xl">
@@ -57,7 +58,8 @@ const displayAllCategories = (data) => {
                  <p>${item.authors[0].profile_name} ${
         item.authors[0]?.verified === true
           ? '<i class="fa-solid fa-certificate text-[#2568EF]"></i>'
-          : ""}</p>
+          : ""
+      }</p>
                  <p>${item.others.views} </p>
                 </div>
               </div>
@@ -65,6 +67,7 @@ const displayAllCategories = (data) => {
           </div>
           </div>
             `;
+      // console.log(item.others.views);
       category.appendChild(div);
     });
   } else {
@@ -77,6 +80,7 @@ const displayAllCategories = (data) => {
         `;
     error.appendChild(div);
   }
+  
 };
 
 handleAllCategories("1000");

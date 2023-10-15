@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PH Tube Hub API</title>
+        <!-- link fontAwesome -->
+        <script
+          src="https://kit.fontawesome.com/b12af23a92.js"
+          crossorigin="anonymous"
+        ></script>
+        <!-- link google font  -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+        <!-- link daisyUi tailwind css  -->
+        <link
+          href="https://cdn.jsdelivr.net/npm/daisyui@3.9.2/dist/full.css"
+          rel="stylesheet"
+          type="text/css"
+        />
+        <script src="https://cdn.tailwindcss.com"></script>
+    
+        <!-- local css -->
+        <style>
+          * {
+            font-family: "Inter", sans-serif;
+            margin: 0;
+          }
+        </style>
+      </head>
+<body>
+    <header class="p-4">
+        <!-- start header  -->
+        <nav>
+          <div class="navbar bg-base-100">
+            <div class="navbar-start">
+              <div class="dropdown">
+                <label>
+                  <img class="w-[80%]" src="../images/Logo.png" alt="" />
+                </label>
+              </div>
+            </div>
+            <div class="navbar-center">
+              <button onclick="handleSortByViewBtn()" class="btn btn-active btn-ghost normal-case text-xl"
+                >Sort by view</button
+              >
+            </div>
+            <div class="navbar-end">
+              <a href="../index.html">
+                <button class="btn bg-red-500 hover:bg-red-700 text-white">
+                  Home
+                </button>
+              </a>
+            </div>
+          </div>
+          <hr class="mt-4" />
+        </nav>
+        <!-- end Header section -->
+      </header>
+      <main>
+        <section class=" mt-10 bg-pink-100 lg:px-12 mx-auto w-8/12 rounded-lg shadow-lg">
+            <div class="p-5">
+             <div class="text-center ">
+              <img class="w-[300px] inline text-center rounded-lg" src="/images/questions-and-answers.jpg" alt="">
+             </div>
+              <h1 class="font-bold mt-5">1.Discuss the scope of var, let, and const?</h1>
+            <p><span class="font-bold">Ans:</span><strong>Var:</strong> No Block Scope: Variables declared with var are not block-scoped, meaning they can "leak" out of if statements or loops. 
+            <strong>let: </strong>Block Scope: Variables declared with let are block-scoped. They are only visible within the block in which they are declared, such as if statements or loops. <strong>const: </strong>Cannot Be Re-assigned: Variables declared with const cannot be reassigned. </p>
+            <h1 class="font-bold mt-4">2.Tell us the use cases of null and undefined?</h1>
+            <p><span class="font-bold">Ans:</span> <strong>Null : </strong> in JavaScript means an empty value and is also a primitive type in JavaScript. The variable which has been assigned as null contains no value. <strong>Undefined :</strong>  on the other hand, means the variable has been declared, but its value has not been assigned.</p>
+            <h1 class="font-bold mt-5">3.What do you mean by REST API?</h1>
+            <p><span class="font-bold">Ans:</span> RESTful APIs are commonly used in web development and are known for their simplicity, scalability, and ease of use. They make use of standard HTTP protocols, which are widely supported by a variety of programming languages and platforms. This makes REST a popular choice for building APIs that can be accessed from a wide range of clients, including web browsers, mobile apps, and other applications.</p>
+            </div>
+          </section>
+      </main>
+</body>
+</html>
