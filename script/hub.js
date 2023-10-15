@@ -1,4 +1,5 @@
 // show categories data.
+let array = [];
 const handleCategory = async () => {
   const res = await fetch(
     "https://openapi.programming-hero.com/api/videos/categories"
@@ -28,6 +29,7 @@ const displayAllCategories = (data) => {
   const error = document.getElementById("error-container");
   category.innerHTML = "";
   error.innerHTML = "";
+  array = data;
   if (data.length > 0) {
     data.forEach((item) => {
       const timeALl = item.others.posted_date;
@@ -82,6 +84,11 @@ const displayAllCategories = (data) => {
   }
   
 };
+
+const sortByViewBtn = () => {
+  array.sort((a, b) => (parseInt(a.others.views) - parseInt(b.others.views)))
+  displayAllCategories(array)
+}
 
 handleAllCategories("1000");
 handleCategory();
