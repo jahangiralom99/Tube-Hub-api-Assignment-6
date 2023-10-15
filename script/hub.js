@@ -86,7 +86,7 @@ const displayAllCategories = (data) => {
 };
 
 const sortByViewBtn = () => {
-  array.sort((a, b) => (parseInt(a.others.views) - parseInt(b.others.views)))
+  array.sort((a, b) => ( parseInt(b.others.views)- parseInt(a.others.views) ))
   displayAllCategories(array)
 }
 
